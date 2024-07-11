@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+
+  <body>
+    <div
+      id="container"
+      style="width: 610px; height: 530px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var chart = {
+          zoomType: "xy",
+        };
+        var subtitle = {
+          text: "Processing Head / Hour",
+          style: {
+            fontWeight: "400",
+            fontSize: "16",
+          },
+        };
+        var title = {
+          text: "",
+        };
+        var xAxis = {
+          tickWidth: 1,
+          tickLength: 10,
+
+          categories: [
+            "6/2/2023",
+            "6/4/2023",
+            "6/8/2023",
+            "6/10/2023",
+            "6/12/2023",
+            "6/14/2023",
+            "6/16/2023",
+            "6/20/2023",
+            "6/22/2023",
+            "6/28/2023",
+            "6/30/2023",
+            "7/2/2023",
+            "7/4/2023",
+            "7/8/2023",
+            "7/12/2023",
+            "7/14/2023",
+            "7/16/2023",
+            "7/18/2023",
+            "7/22/2023",
+            "7/26/2023",
+            "7/28/2023",
+            "7/30/2023",
+            "8/2/2023",
+            "8/4/2023",
+            "8/6/2023",
+            "8/12/2023",
+            "8/14/2023",
+            "8/16/2023",
+            "8/18/2023",
+            "8/20/2023",
+            "8/24/2023",
+            "8/26/2023",
+            "8/30/2023",
+            "9/2/2023",
+            "9/4/2023",
+            "9/8/2023",
+            "9/10/2023",
+            "9/14/2023",
+            "9/16/2023",
+            "9/18/2023",
+            "9/20/2023",
+            "9/26/2023",
+            "9/28/2023",
+            "9/30/2023",
+            "10/2/2023",
+            "10/6/2023",
+            "10/10/2023",
+            "10/12/2023",
+            "10/14/2023",
+            "10/16/2023",
+            "10/18/2023",
+            "10/22/2023",
+            "10/26/2023",
+            "10/28/2023",
+            "10/30/2023",
+            "11/2/2023",
+            "11/6/2023",
+            "11/10/2023",
+            "11/12/2023",
+            "11/14/2023",
+            "11/16/2023",
+            "11/18/2023",
+            "11/22/2023",
+            "11/24/2023",
+            "11/28/2023",
+            "11/30/2023",
+            "12/2/2023",
+            "12/4/2023",
+            "12/6/2023",
+            "12/8/2023",
+            "12/10/2023",
+            "12/14/2023",
+            "12/16/2023",
+            "12/20/2023",
+            "12/22/2023",
+            "12/24/2023",
+            "12/28/2023",
+            "1/2/2024",
+            "1/4/2024",
+            "1/8/2024",
+            "1/10/2024",
+            "1/12/2024",
+            "1/14/2024",
+            "1/18/2024",
+            "1/20/2024",
+            "1/22/2024",
+            "1/28/2024",
+            "1/30/2024",
+          ],
+          crosshair: true,
+        };
+        var yAxis = [
+          {
+            // Secondary yAxis
+            min: 1000,
+            tickInterval: 50,
+            max: 1400,
+            title: {
+              text: "Head/Hr",
+              style: {
+                fontWeight: "500",
+                fontSize: "18",
+              },
+            },
+            labels: {
+              format: "{value}",
+            },
+          },
+        ];
+        var plotOptions = {
+          column: {
+            grouping: false,
+          },
+        };
+        var tooltip = {
+          shared: true,
+        };
+
+        var legend = {};
+        var series = [
+          {
+            name: "Kill Hogs/Hr",
+            type: "line",
+            marker: {
+              enabled: false,
+            },
+            color: "#4f81bd",
+            data: [
+              1345, 1359, 1335, 1325, 1375, 1330, 1035, 1355, 1335, 1365, 1333,
+              1350, 1307, 1365, 1358, 1220, 1308, 1346, 1225, 1233, 1340, 1231,
+              1303, 1108, 1285, 1188, 1300, 1350, 1145, 1353, 1300, 1362, 1310,
+              1368, 1333, 1350, 1307, 1320, 1355, 1225, 1345, 1260, 1345, 1320,
+              1350, 1300, 1300, 1350, 1333, 1350, 900, 1350, 1290, 1340, 1230,
+              1340, 1320, 1340, 1230, 1355, 1320, 1350, 1310, 1359, 1050, 1373,
+              1208, 1335, 1285, 1188, 1350, 1145, 1353, 1350, 1295, 1365, 0,
+              1360, 1280, 1340, 1231, 1303, 1108, 1350, 1353, 1284, 1360, 1280,
+              1325,
+            ],
+          },
+          {
+            name: "Kill Rail Eff % Goal",
+            type: "line",
+            lineWidth: 2.5,
+            color: "#c0504d ",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335, 1335,
+              1335, 1335,
+            ],
+            tooltip: {
+              valueSuffix: " %",
+            },
+          },
+        ];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.plotOptions = plotOptions;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

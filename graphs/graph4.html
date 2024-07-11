@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var title = {
+          text: "",
+        };
+        var subtitle = {
+          text: "FG % of Carcass Weight",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+        };
+        var yAxis = {
+          min: 80,
+          tickInterval: 2,
+          title: {
+            text: "% of Carc",
+            style: {
+              fontWeight: "500",
+              fontSize: "18",
+            },
+          },
+          labels: {
+            format: "{value}%",
+          },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: "#808080",
+            },
+          ],
+        };
+        var tooltip = {
+          valueSuffix: "%",
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "FG % of Carcass Weight",
+            color: "#4673c4",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              91.8, 88.8, 89, 90.5, 91.2, 91, 91.2, 92, 92.2, 90, 91.5, 91.5,
+              90.8, 92.8, 92.1, 92.8, 92, 93, 91.2, 91, 91.2, 89.5, 91, 92.5,
+            ],
+          },
+        ];
+
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

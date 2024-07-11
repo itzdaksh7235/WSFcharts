@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var chart = {
+          zoomType: "xy",
+        };
+        var subtitle = {
+          text: "Ham Boning Primary Yields & Speed",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var title = {
+          text: "",
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+          crosshair: true,
+        };
+        var yAxis = [
+          {
+            // Primary yAxis
+            min: 20,
+            max: 45,
+            labels: {
+              format: "{value}%",
+            },
+            title: {
+              text: "Primary Yield %",
+              style: {
+                fontWeight: "500",
+                fontSize: "18",
+              },
+            },
+            opposite: true,
+          },
+          {
+            // Secondary yAxis
+            min: 0,
+            max: 3000,
+            title: {
+              text: "Hams/Hour",
+              style: {
+                fontWeight: "500",
+                fontSize: "18",
+              },
+            },
+            labels: {
+              format: "{value}",
+            },
+          },
+        ];
+        var tooltip = {
+          shared: true,
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "Primary Std Yield %",
+            type: "area",
+            color: "#ececec",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              37, 34, 34, 31.5, 32, 37, 40.5, 41, 42.5, 41.5, 41, 41, 40, 43,
+              41, 43, 44, 43.5, 44, 44.5, 43, 43.5, 45,
+            ],
+            tooltip: {
+              valueSuffix: " %",
+            },
+          },
+          {
+            name: "Hams/Hour",
+            type: "column",
+            color: "#00b050",
+            yAxis: 1,
+            marker: {
+              enabled: false,
+            },
+            data: [
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1400, 1450, 1250, 1350, 1300,
+              1350, 1300, 1350, 1250, 1300, 1400, 1300,
+            ],
+          },
+          {
+            name: "Target Hams/Hour",
+            type: "line",
+            color: "#ff0000",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            yAxis: 1,
+            data: [
+              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
+              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
+              1700,
+            ],
+          },
+          {
+            name: "Primary Ham Yield %",
+            type: "spline",
+            color: "#0070c0 ",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              37, 36, 36.5, 35, 33, 38, 36, 40, 41, 42.5, 41.5, 41, 38, 40, 43,
+              41, 43, 44, 43.5, 44, 44.5, 43, 43.5,
+            ],
+            tooltip: {
+              valueSuffix: " %",
+            },
+          },
+        ];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

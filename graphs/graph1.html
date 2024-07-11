@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var chart = {
+          zoomType: "xy",
+        };
+        var subtitle = {
+          text: "Fabrication Speed",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var title = {
+          text: "",
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+          crosshair: true,
+        };
+        var yAxis = [
+          {
+            // Primary yAxis
+            min: 85,
+            labels: {
+              format: "{value}%",
+            },
+            title: {
+              text: "Rail Eff %",
+              style: {
+                fontWeight: "500",
+                fontSize: "18",
+              },
+            },
+            opposite: true,
+          },
+          {
+            // Secondary yAxis
+            min: 1200,
+            tickPixelInterval: 50,
+            title: {
+              text: "Hogs/Hour",
+              style: {
+                fontWeight: "500",
+                fontSize: "18",
+              },
+            },
+            labels: {
+              format: "{value}",
+            },
+          },
+        ];
+        var tooltip = {
+          shared: true,
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "Fab Hogs/Hour",
+            type: "column",
+            color: "#4472c4",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            yAxis: 1,
+            data: [
+              1335, 1340, 1285, 1300, 1375, 1335, 1370, 1385, 1365, 1415, 1430,
+              1425, 1380, 1445, 1445, 1440, 1425, 1420, 1430, 1370, 1405, 1435,
+              1370,
+            ],
+            tooltip: {
+              valueSuffix: " %",
+            },
+          },
+          {
+            name: "Fab Rail Eff",
+            color: "#00b050",
+            lineWidth: 5,
+
+            marker: {
+              enabled: false,
+            },
+            type: "spline",
+            data: [
+              92, 92.5, 89, 90, 95.2, 92.5, 95, 94, 92, 94.5, 95.5, 95, 93,
+              96.2, 96, 95.8, 95.1, 95, 95.3, 92.3, 94, 95.3, 92,
+            ],
+            tooltip: {
+              valueSuffix: "",
+            },
+          },
+        ];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

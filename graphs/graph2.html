@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var title = {
+          text: "",
+        };
+        var subtitle = {
+          text: "Fab Labor $/Head",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+        };
+        var yAxis = {
+          min: 8,
+          tickInterval: 0.5,
+          title: {
+            text: "$/Head",
+            style: {
+              fontWeight: "500",
+              fontSize: "18",
+            },
+          },
+          labels: {
+            format: "${value}",
+          },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: "#e2e2e2",
+            },
+          ],
+        };
+        var tooltip = {
+          valuePrefix: "$",
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "Fab Labor $/Head",
+            color: "#4c78c6",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              11.6, 12.05, 11.5, 12.2, 11.3, 11.9, 12.1, 10.9, 11.2, 11.35,
+              10.45, 11.2, 11.15, 10.5, 11.0, 10.05, 10.1, 10.0, 11.05, 10.4,
+              11.05, 10.85, 10.45,
+            ],
+          },
+        ];
+
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

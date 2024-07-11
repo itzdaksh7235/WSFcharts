@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var title = {
+          text: "",
+        };
+        var subtitle = {
+          text: "Loin Boning Primary Yield %",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "33",
+            "35",
+            "37",
+            "39",
+            "41",
+            "43",
+            "45",
+            "47",
+            "1",
+            "3",
+            "5",
+          ],
+        };
+        var yAxis = {
+          min: 22,
+          tickInterval: 2,
+          title: {
+            text: "Primary Yield %",
+            style: {
+              fontWeight: "500",
+              fontSize: "18",
+            },
+          },
+          labels: {
+            format: "{value}%",
+          },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: "#808080",
+            },
+          ],
+        };
+        var tooltip = {
+          valueSuffix: "%",
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "Primary Std Yield %",
+            type: "area",
+            color: "#ececec",
+
+            data: [
+              30.5, 30.7, 29.5, 29.3, 29.4, 29.5, 29.7, 34.8, 34.5, 34, 35,
+              34.5,
+            ],
+          },
+          {
+            name: "Loin Primary Yield %",
+            color: "#4673c4",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              29.5, 28, 27.5, 28, 29, 30, 28.5, 29.4, 31, 32.2, 31.2, 31.6,
+            ],
+          },
+        ];
+
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

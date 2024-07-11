@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var chart = {
+          type: "column",
+        };
+        var title = {
+          text: "",
+        };
+        var subtitle = {
+          text: "Overtime Hours",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var xAxis = {
+          categories: [
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+          title: {
+            text: null,
+          },
+        };
+        var yAxis = {
+          min: 0,
+          tickInterval: 2000,
+          title: {
+            text: "Weekly OT Hours",
+            style: {
+              fontWeight: "500",
+              fontSize: "18",
+            },
+          },
+          labels: {
+            overflow: "justify",
+          },
+        };
+        var tooltip = {
+          valueSuffix: "",
+        };
+        var plotOptions = {
+          column: {
+            grouping: false,
+          },
+        };
+        var legend = {};
+        var credits = {
+          enabled: false,
+        };
+        var series = [
+          {
+            name: "Sanitation OT",
+            color: "#ffb41f",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              5600, 11800, 6500, 7400, 5900, 6300, 13000, 4600, 5000, 11900,
+              3100, 10400, 10500, 4200, 10900, 4000, 4100, 2600, 10300, 1900,
+              10000, 11100, 4300,
+            ],
+          },
+          {
+            name: "HB OT",
+            color: "#ff0000",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              5400, 11200, 6400, 7300, 5800, 6200, 12300, 4500, 4800, 11200,
+              3100, 9900, 10000, 4000, 10400, 3800, 4000, 2200, 9800, 1700,
+              9200, 10300, 4100,
+            ],
+          },
+          {
+            name: "Processing OT",
+            color: "#00b050",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              5200, 10600, 6200, 7100, 5600, 5800, 11400, 4300, 4200, 10200,
+              2800, 8300, 8400, 2900, 8400, 2900, 3500, 2000, 8300, 1500, 8200,
+              9100, 3500,
+            ],
+          },
+          {
+            name: "Fab OT",
+            color: "#4472c4",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              4250, 8000, 4700, 5900, 4200, 4400, 8000, 3000, 2900, 7200, 1700,
+              5800, 5900, 1800, 5900, 1800, 2200, 1100, 5800, 1000, 5800, 6200,
+              2500,
+            ],
+          },
+        ];
+
+        var json = {};
+        json.chart = chart;
+        json.title = title;
+        json.subtitle = subtitle;
+        json.tooltip = tooltip;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.series = series;
+        json.plotOptions = plotOptions;
+        json.legend = legend;
+        json.credits = credits;
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>

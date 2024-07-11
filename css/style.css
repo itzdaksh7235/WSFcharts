@@ -1,0 +1,43 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.maincontent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.maincontent iframe {
+  border: 1px solid #e7e5e5;
+  margin: 20px 0;
+}
+
+.chartsingle {
+  width: 100%;
+}
+
+#csv {
+  display: none;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.headingBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 60px;
+  margin: 20px 30px;
+}
+ 

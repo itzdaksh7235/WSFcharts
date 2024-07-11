@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../js/highcharts.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Chart</title>
+  </head>
+  <body>
+    <div
+      id="container"
+      style="width: 550px; height: 400px; margin: 0 auto"
+    ></div>
+    <script language="JavaScript">
+      $(document).ready(function () {
+        var title = {
+          text: "",
+        };
+        var subtitle = {
+          text: "Ham Boning Total Yield Variance $",
+          style: {
+            fontWeight: "bold",
+            fontSize: "20",
+          },
+        };
+        var xAxis = {
+          categories: [
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+          ],
+        };
+        var yAxis = {
+          min: -80000,
+          max: 10000,
+          tickInterval: 10000,
+          title: {
+            text: "Weekly $ Variance",
+            style: {
+              fontWeight: "500",
+              fontSize: "18",
+            },
+          },
+          labels: {
+            format: "${value}",
+          },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: "#808080",
+            },
+          ],
+        };
+        var tooltip = {
+          valuePrefix: "$",
+        };
+        var legend = {};
+        var series = [
+          {
+            name: "Ham Boning $ Var",
+            color: "#4673c4",
+            marker: {
+              enabled: false,
+            },
+            lineWidth: 4,
+
+            data: [
+              -55000, -57000, -73000, -68000, 2000, -21500, -20000, -5000,
+              -12000, -15000, -15500, -3000,
+            ],
+          },
+        ];
+
+        var json = {};
+        json.title = title;
+        json.subtitle = subtitle;
+        json.xAxis = xAxis;
+        json.yAxis = yAxis;
+        json.tooltip = tooltip;
+        json.legend = legend;
+        json.series = series;
+
+        $("#container").highcharts(json);
+      });
+    </script>
+  </body>
+</html>
