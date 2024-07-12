@@ -32,7 +32,7 @@
           zoomType: "xy",
         };
         var subtitle = {
-          text: "Ham Boning Primary Yields & Speed",
+          text: "FRE Harvest Speed",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -43,42 +43,28 @@
         };
         var xAxis = {
           categories: [
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
+            3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+            22, 23, 24, 25,
           ],
           crosshair: true,
         };
         var yAxis = [
           {
             // Primary yAxis
-            min: 20,
-            max: 45,
+            min: 86,
+            tickInterval: 1,
+            max: 100,
             labels: {
               format: "{value}%",
+              style: {
+                fontWeight: "500",
+                fontSize: "14",
+              },
             },
+            gridLineColor: "#fff",
+
             title: {
-              text: "Primary Yield %",
+              text: "% Rail Eff",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -88,10 +74,11 @@
           },
           {
             // Secondary yAxis
-            min: 0,
-            max: 3000,
+            min: 800,
+            tickInterval: 100,
+            max: 1400,
             title: {
-              text: "Hams/Hour",
+              text: "Hogs/Hour",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -99,16 +86,28 @@
             },
             labels: {
               format: "{value}",
+              style: {
+                fontWeight: "500",
+                fontSize: "14",
+              },
             },
+            gridLineColor: "#ddd",
           },
         ];
+        var plotOptions = {
+          series: {
+            borderRadius: {
+              radius: 0,
+            },
+          },
+        };
         var tooltip = {
           shared: true,
         };
         var legend = {};
         var series = [
           {
-            name: "Hams/Hour",
+            name: "Kill Hogs/Hour",
             type: "column",
             color: "#9CC7E6",
             yAxis: 1,
@@ -116,42 +115,46 @@
               enabled: false,
             },
             data: [
-              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1400, 1450, 1250, 1350, 1300,
-              1350, 1300, 1350, 1250, 1300, 1400, 1300,
+              1355, 1290, 1356, 1275, 1360, 1352, 1356, 1324, 1335, 1325, 1260,
+              1328, 1220, 1330, 1340, 1314, 1375, 1355, 1280, 1286, 1294, 1290,
+              1325,
             ],
           },
           {
-            name: "Target Hams/Hour",
-            type: "line",
-            color: "#ff0000",
-            lineWidth: 4,
-
-            marker: {
-              enabled: false,
-            },
-            yAxis: 1,
-            data: [
-              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
-              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
-              1700,
-            ],
-          },
-          {
-            name: "Primary Ham Yield %",
+            name: "Kill Rail Eff",
             type: "line",
             color: "#0AB356 ",
-            lineWidth: 4,
+            lineWidth: 3,
+            yAxis: 1,
 
             marker: {
               enabled: false,
             },
             data: [
-              37, 36, 36.5, 35, 33, 38, 36, 40, 41, 42.5, 41.5, 41, 38, 40, 43,
-              41, 43, 44, 43.5, 44, 44.5, 43, 43.5,
+              1200, 1150, 1190, 1000, 1210, 1200, 1210, 1115, 1175, 1168, 989,
+              1170, 885, 1176, 1205, 1105, 1235, 1200, 1000, 1125, 1150, 1132,
+              1104,
             ],
             tooltip: {
               valueSuffix: " %",
             },
+          },
+          {
+            name: "Harvest Rail Eff Excellence ",
+            type: "line",
+            color: "#ff0000",
+            lineWidth: 2,
+
+            marker: {
+              enabled: false,
+            },
+
+            yAxis: 1,
+            data: [
+              1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325,
+              1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325, 1325,
+              1325,
+            ],
           },
         ];
 

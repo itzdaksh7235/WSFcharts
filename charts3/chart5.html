@@ -32,7 +32,7 @@
           zoomType: "xy",
         };
         var subtitle = {
-          text: "Ham Boning Primary Yields & Speed",
+          text: "FRE Fabrication Speed",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -43,42 +43,28 @@
         };
         var xAxis = {
           categories: [
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
+            3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+            22, 23, 24, 25,
           ],
           crosshair: true,
         };
         var yAxis = [
           {
             // Primary yAxis
-            min: 20,
-            max: 45,
+            min: 86,
+            tickInterval: 1,
+            max: 100,
             labels: {
               format: "{value}%",
+              style: {
+                fontWeight: "500",
+                fontSize: "14",
+              },
             },
+            gridLineColor: "#fff",
+
             title: {
-              text: "Primary Yield %",
+              text: "% Rail Eff",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -88,10 +74,11 @@
           },
           {
             // Secondary yAxis
-            min: 0,
-            max: 3000,
+            min: 1100,
+            tickInterval: 50,
+            max: 1500,
             title: {
-              text: "Hams/Hour",
+              text: "Hogs/Hour",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -99,74 +86,75 @@
             },
             labels: {
               format: "{value}",
+              style: {
+                fontWeight: "500",
+                fontSize: "14",
+              },
             },
+            gridLineColor: "#ddd",
           },
         ];
+        var plotOptions = {
+          series: {
+            borderRadius: {
+              radius: 0,
+            },
+          },
+        };
         var tooltip = {
           shared: true,
         };
         var legend = {};
         var series = [
           {
-            name: "Primary Std Yield %",
-            type: "area",
-            color: "#ececec",
+            name: "Cut Hogs/Hour",
+            type: "column",
+            color: "#9CC7E6",
+            yAxis: 1,
             marker: {
               enabled: false,
             },
             data: [
-              37, 34, 34, 31.5, 32, 37, 40.5, 41, 42.5, 41.5, 41, 41, 40, 43,
-              41, 43, 44, 43.5, 44, 44.5, 43, 43.5, 45,
+              1400, 1435, 1370, 1430, 1431, 1433, 1429, 1450, 1454, 1464, 1449,
+              1458, 1458, 1450.8, 1384, 1442, 1456, 1437, 1400.9, 1443, 1450,
+              1425, 1450,
+            ],
+          },
+          {
+            name: "Cut Rail Eff",
+            type: "line",
+            color: "#0AB356 ",
+            lineWidth: 3,
+            yAxis: 1,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              1315, 1360, 1215, 1362, 1357, 1380, 1365, 1410, 1430, 1450, 1410,
+              1435, 1430, 1425, 1290, 1400, 1430, 1390, 1310, 1400, 1411, 1352,
+              1405,
             ],
             tooltip: {
               valueSuffix: " %",
             },
           },
           {
-            name: "Hams/Hour",
-            type: "column",
-            color: "#00b050",
-            yAxis: 1,
-            marker: {
-              enabled: false,
-            },
-            data: [
-              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1400, 1450, 1250, 1350, 1300,
-              1350, 1300, 1350, 1250, 1300, 1400, 1300,
-            ],
-          },
-          {
-            name: "Target Hams/Hour",
+            name: "Cut Rail Eff Excellence ",
             type: "line",
             color: "#ff0000",
-            lineWidth: 4,
+            lineWidth: 2,
 
             marker: {
               enabled: false,
             },
+
             yAxis: 1,
             data: [
-              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
-              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
-              1700,
+              1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440,
+              1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440,
+              1440,
             ],
-          },
-          {
-            name: "Primary Ham Yield %",
-            type: "line",
-            color: "#0070c0 ",
-            lineWidth: 4,
-
-            marker: {
-              enabled: false,
-            },
-            data: [
-              37, 36, 36.5, 35, 33, 38, 36, 40, 41, 42.5, 41.5, 41, 38, 40, 43,
-              41, 43, 44, 43.5, 44, 44.5, 43, 43.5,
-            ],
-            tooltip: {
-              valueSuffix: " %",
-            },
           },
         ];
 

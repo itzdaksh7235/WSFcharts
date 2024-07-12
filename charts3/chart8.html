@@ -32,7 +32,7 @@
           zoomType: "xy",
         };
         var subtitle = {
-          text: "EG Fabrication Speed",
+          text: "FRE Ham Boning Primary Yields & Speeds",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -51,9 +51,9 @@
         var yAxis = [
           {
             // Primary yAxis
-            min: 86,
-            tickInterval: 1,
-            max: 100,
+            min: 25,
+            tickInterval: 5,
+            max: 50,
             labels: {
               format: "{value}%",
               style: {
@@ -74,9 +74,9 @@
           },
           {
             // Secondary yAxis
-            min: 1100,
-            tickInterval: 50,
-            max: 1500,
+            min: 0,
+            tickInterval: 500,
+            max: 3000,
             title: {
               text: "Hogs/Hour",
               style: {
@@ -101,28 +101,53 @@
             },
           },
         };
+        var plotOptions = {
+          series: {
+            borderRadius: {
+              radius: 0,
+            },
+          },
+        };
         var tooltip = {
           shared: true,
         };
         var legend = {};
         var series = [
           {
+            name: "Ham Bone Primary Std Yield %",
+            type: "area",
+            yAxis: 1,
+            color: "#DDD",
+            marker: {
+              enabled: false,
+            },
+            data: [
+              2150, 2000, 2040, 2100, 2000, 2060, 1960, 2080, 2020, 2040, 2020,
+              2210, 2000, 1900, 2050, 2100, 1970, 2000, 1900, 1980, 2000, 2030,
+              2010,
+            ],
+            tooltip: {
+              valueSuffix: " %",
+            },
+          },
+          {
             name: "Cut Hogs/Hour",
-            type: "column",
-            color: "#9CC7E6",
+            type: "line",
+            color: "#0066BC",
+            lineWidth: 3,
             yAxis: 1,
             marker: {
               enabled: false,
             },
             data: [
-              1195, 1260, 1265, 1245, 1185, 1290, 1263, 1290, 1300, 1275, 1275,
-              1275, 1300, 1275, 1248, 1270, 1225, 1276, 1277.5, 1250, 1265,
-              1220, 1257,
+              2250, 2130, 2190, 2300, 2070, 2160, 2100, 2200, 2130, 2160, 2080,
+              2410, 2100, 2000, 2250, 2500, 2050, 2120, 1990, 2050, 2110, 2130,
+              2100,
             ],
           },
           {
             name: "Cut Rail Eff",
-            type: "line",
+            type: "column",
             color: "#0AB356 ",
             lineWidth: 3,
             yAxis: 1,
@@ -138,23 +163,6 @@
             tooltip: {
               valueSuffix: " %",
             },
-          },
-          {
-            name: "Cut Rail Eff Excellence ",
-            type: "line",
-            color: "#ff0000",
-            lineWidth: 2,
-
-            marker: {
-              enabled: false,
-            },
-
-            yAxis: 1,
-            data: [
-              1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440,
-              1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440, 1440,
-              1440,
-            ],
           },
         ];
 
