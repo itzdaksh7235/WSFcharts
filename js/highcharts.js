@@ -7396,18 +7396,16 @@
                 l = this.label;
               l ||
                 ((this.label = l =
-                  n
-                    .text(this.getLabelText(t), 0, 0, t.useHTML)
-                    .attr({
-                      align: t.textAlign || t.align,
-                      rotation: t.rotation,
-                      class:
-                        "highcharts-plot-" +
-                        (r ? "band" : "line") +
-                        "-label" +
-                        (t.className || ""),
-                      zIndex: o,
-                    })),
+                  n.text(this.getLabelText(t), 0, 0, t.useHTML).attr({
+                    align: t.textAlign || t.align,
+                    rotation: t.rotation,
+                    class:
+                      "highcharts-plot-" +
+                      (r ? "band" : "line") +
+                      "-label" +
+                      (t.className || ""),
+                    zIndex: o,
+                  })),
                 a.chart.styledMode ||
                   l.css(
                     h({ fontSize: "0.8em", textOverflow: "ellipsis" }, t.style)
@@ -7979,15 +7977,10 @@
                         (r.isActive = !0),
                         r.attr({ text: s }),
                         m ||
-                          r
-                            .css(y.style)
-                            .attr({
-                              stroke:
-                                y.borderColor ||
-                                e.color ||
-                                a.color ||
-                                "#333333",
-                            }),
+                          r.css(y.style).attr({
+                            stroke:
+                              y.borderColor || e.color || a.color || "#333333",
+                          }),
                         r
                       );
                     })(l.tt, o, s.toString())),
@@ -13071,7 +13064,7 @@
                 this.setResponsive && this.setResponsive(),
                 (this.hasRendered = !0);
             }
-             
+
             destroy() {
               let t;
               let e = this,

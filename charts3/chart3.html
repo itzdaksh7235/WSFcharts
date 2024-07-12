@@ -21,7 +21,6 @@
 
     <title>Chart</title>
   </head>
-
   <body>
     <div
       id="container"
@@ -33,7 +32,7 @@
           zoomType: "xy",
         };
         var subtitle = {
-          text: "Weekly FRE COOP Team Count vs Total Payroll",
+          text: "Ham Boning Primary Yields & Speed",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -44,23 +43,42 @@
         };
         var xAxis = {
           categories: [
-            5, 4, 3, 2, 1, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36,
-            35, 34, 33, 32, 31,
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
           ],
-          reversed: true,
           crosshair: true,
         };
         var yAxis = [
           {
             // Primary yAxis
-            min: 0,
-            tickInterval: 500000,
-            max: 2500000,
+            min: 20,
+            max: 45,
             labels: {
-              format: "${value}",
+              format: "{value}%",
             },
             title: {
-              text: "Payroll",
+              text: "Primary Yield %",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -71,10 +89,9 @@
           {
             // Secondary yAxis
             min: 0,
-            tickInterval: 200,
-            max: 1400,
+            max: 3000,
             title: {
-              text: "Team Count",
+              text: "Hams/Hour",
               style: {
                 fontWeight: "500",
                 fontSize: "18",
@@ -85,67 +102,52 @@
             },
           },
         ];
-        var plotOptions = {
-          column: {
-            grouping: false,
-          },
-        };
         var tooltip = {
           shared: true,
         };
-
         var legend = {};
         var series = [
           {
-            name: "FRE Indirect Count",
+            name: "Hams/Hour",
             type: "column",
+            color: "#9CC7E6",
+            yAxis: 1,
             marker: {
               enabled: false,
             },
-            color: "#D0CECE",
-            yAxis: 1,
-            data: [1220, 1225, 1170, 1195, 1195, 1200, 1225, 1200],
-            tooltip: {
-              valueSuffix: " %",
-            },
-          },
-          {
-            name: "FRE Direct Count",
-            type: "column",
-            marker: {
-              enabled: false,
-            },
-            color: "#00b050",
-            yAxis: 1,
-            data: [1040, 1010, 990, 1000, 1100, 1000, 1020, 909],
-          },
-          {
-            name: "FRE Labor $ Goal",
-            type: "line",
-            color: "#ff0000",
-            lineWidth: 5,
-            marker: {
-              enabled: false,
-            },
-            yAxis: 1,
             data: [
-              1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-              1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
-              1000,
+              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1400, 1450, 1250, 1350, 1300,
+              1350, 1300, 1350, 1250, 1300, 1400, 1300,
             ],
           },
           {
-            name: "FRE Labor $",
+            name: "Target Hams/Hour",
             type: "line",
+            color: "#ff0000",
             lineWidth: 4,
-            color: "#0070c0 ",
+
             marker: {
               enabled: false,
             },
             yAxis: 1,
             data: [
-              1010, 1310, 1320, 1000, 1200, 900, 1010, 1030, 1290, 1090, 1150,
-              1240, 990, 1350, 1100, 1050, 1330, 1170,
+              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
+              1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700, 1700,
+              1700,
+            ],
+          },
+          {
+            name: "Primary Ham Yield %",
+            type: "line",
+            color: "#0AB356 ",
+            lineWidth: 4,
+
+            marker: {
+              enabled: false,
+            },
+            data: [
+              37, 36, 36.5, 35, 33, 38, 36, 40, 41, 42.5, 41.5, 41, 38, 40, 43,
+              41, 43, 44, 43.5, 44, 44.5, 43, 43.5,
             ],
             tooltip: {
               valueSuffix: " %",
@@ -159,7 +161,6 @@
         json.subtitle = subtitle;
         json.xAxis = xAxis;
         json.yAxis = yAxis;
-        json.plotOptions = plotOptions;
         json.tooltip = tooltip;
         json.legend = legend;
         json.series = series;
