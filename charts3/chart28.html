@@ -28,18 +28,11 @@
     ></div>
     <script language="JavaScript">
       $(document).ready(function () {
-        var chart = {
-          type: "column",
-
-          borderRadius: {
-            radius: 0,
-          },
-        };
         var title = {
           text: "",
         };
         var subtitle = {
-          text: "EG Overtime Hours",
+          text: "FRE COOP Revenue % of Cutout",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -47,6 +40,7 @@
         };
         var xAxis = {
           categories: [
+            "2",
             "3",
             "4",
             "5",
@@ -69,106 +63,76 @@
             "22",
             "23",
             "24",
-            "25",
           ],
-          title: {
-            text: null,
-          },
         };
         var yAxis = {
-          min: 0,
-          tickInterval: 2000,
+          min: 110,
+          max: 130,
+          tickInterval: 2,
           title: {
-            text: "OT Hours",
+            text: "Revenue % of Cutout",
             style: {
               fontWeight: "500",
-              fontSize: "18",
+              fontSize: "16",
             },
           },
           labels: {
-            overflow: "justify",
+            format: "{value}%",
           },
+          plotLines: [
+            {
+              value: 0,
+              width: 1,
+              color: "#e2e2e2",
+            },
+          ],
         };
         var tooltip = {
-          valueSuffix: "",
+          valuePrefix: "$",
         };
-        var plotOptions = {
-          series: {
-            borderRadius: {
-              radius: 0,
-            },
-            borderWidth: 0,
-          },
-          column: {
-            grouping: false,
-          },
-        };
+
         var legend = {};
-        var credits = {
-          enabled: false,
-        };
         var series = [
           {
-            name: "Shipping OT Hours",
-            color: "#00b050",
+            name: "Revenue % of Cutout",
+            color: "#242424",
+            lineWidth: 3,
+
             marker: {
               enabled: false,
             },
             data: [
-              12200, 11800, 6000, 6400, 7000, 5500, 6000, 6400, 6000, 12400,
-              3000, 3000, 5800, 6300, 6700, 6300, 6400, 6100, 5900, 6000, 0,
-              8400, 13100,
+              115.4, 118.6, 118, 124.9, 118.1, 118.24, 124, 123, 119.9, 121.4,
+              119.6, 120.5, 120.3, 121.8, 119.8, 121, 120, 119.4, 119.6, 118.4,
+              121, 121,
             ],
           },
           {
-            name: "All Other OT Hours",
-            color: "#ffb41f",
-            marker: {
-              enabled: false,
-            },
-            data: [
-              11700, 11400, 5600, 6000, 6500, 5000, 5700, 6000, 5800, 11300,
-              2500, 2700, 5200, 6000, 6300, 6000, 6000, 5800, 5600, 5900, 0,
-              8100, 12400,
-            ],
-          },
-          {
-            name: "Cold Side OT Hours",
-            color: "#4472c4",
-            marker: {
-              enabled: false,
-            },
-            data: [
-              9800, 9000, 4800, 4900, 5300, 4200, 4400, 4500, 4200, 9800, 2100,
-              2000, 4100, 4100, 5700, 5400, 5300, 5200, 3000, 5000, 100, 6400,
-              10400,
-            ],
-          },
-          {
-            name: "Hot Side OT hours",
+            name: "Revenue % of Cutout Budget",
+            type: "line",
             color: "#ff0000",
+            lineWidth: 3,
             marker: {
               enabled: false,
             },
+
             data: [
-              3400, 3800, 1900, 1800, 1900, 2000, 2000, 2000, 1700, 3700, 300,
-              1900, 2200, 2300, 2000, 2300, 1700, 1900, 1600, 1900, 0, 2300,
-              4100,
+              117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3,
+              117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3, 117.3,
+              117.3, 117.3, 117.3, 117.3,
             ],
           },
         ];
 
         var json = {};
-        json.chart = chart;
         json.title = title;
         json.subtitle = subtitle;
-        json.tooltip = tooltip;
         json.xAxis = xAxis;
         json.yAxis = yAxis;
-        json.series = series;
-        json.plotOptions = plotOptions;
+        json.tooltip = tooltip;
         json.legend = legend;
-        json.credits = credits;
+        json.series = series;
+
         $("#container").highcharts(json);
       });
     </script>

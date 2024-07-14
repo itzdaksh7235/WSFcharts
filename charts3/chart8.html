@@ -24,7 +24,7 @@
   <body>
     <div
       id="container"
-      style="width: 550px; height: 400px; margin: 0 auto"
+      style="width: 550px; height: 450px; margin: 0 auto"
     ></div>
     <script language="JavaScript">
       $(document).ready(function () {
@@ -32,7 +32,7 @@
           zoomType: "xy",
         };
         var subtitle = {
-          text: "FRE Ham Boning Primary Yields & Speeds",
+          text: "EG Ham Boning Primary Yields & Speeds",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -99,6 +99,7 @@
             borderRadius: {
               radius: 0,
             },
+            borderWidth: 0,
           },
         };
         var plotOptions = {
@@ -106,6 +107,7 @@
             borderRadius: {
               radius: 0,
             },
+            borderWidth: 0,
           },
         };
         var tooltip = {
@@ -117,14 +119,17 @@
             name: "Ham Bone Primary Std Yield %",
             type: "area",
             yAxis: 1,
-            color: "#DDD",
+            borderRadius: {
+              radius: 0,
+            },
+            color: "#E0E0E0",
             marker: {
               enabled: false,
             },
             data: [
-              2150, 2000, 2040, 2100, 2000, 2060, 1960, 2080, 2020, 2040, 2020,
-              2210, 2000, 1900, 2050, 2100, 1970, 2000, 1900, 1980, 2000, 2030,
-              2010,
+              1995, 2000, 2000, 2120, 1998, 2233, 2222, 2210, 2000, 2260, 2140,
+              2020, 1900, 2020, 2000, 1990, 2090, 2150, 2000, 2140, 1620, 2350,
+              2310,
             ],
             tooltip: {
               valueSuffix: " %",
@@ -140,25 +145,27 @@
               enabled: false,
             },
             data: [
-              2250, 2130, 2190, 2300, 2070, 2160, 2100, 2200, 2130, 2160, 2080,
-              2410, 2100, 2000, 2250, 2500, 2050, 2120, 1990, 2050, 2110, 2130,
-              2100,
+              2250, 2330, 2430, 2470, 2500, 2350, 2500, 2470, 2280, 2400, 2480,
+              2440, 2300, 2410, 2340, 2140, 2440, 2490, 2270, 2480, 1740, 2505,
+              2530,
             ],
           },
           {
             name: "Cut Rail Eff",
             type: "column",
+            borderRadius: {
+              radius: 0,
+            },
             color: "#0AB356 ",
             lineWidth: 3,
             yAxis: 1,
-
             marker: {
               enabled: false,
             },
             data: [
-              1265, 1430, 1435, 1360, 1250, 1475, 1370, 1405, 1432, 1385, 1380,
-              1375, 1430, 1397, 1320, 1365, 1272, 1387, 1395, 1326, 1360, 1260,
-              1352,
+              1460, 1580, 1620, 1590, 1640, 1790, 1740, 1700, 1650, 1690, 1630,
+              1720, 1680, 1700, 1750, 1670, 1580, 1620, 1560, 1670, 1525, 1690,
+              1640,
             ],
             tooltip: {
               valueSuffix: " %",

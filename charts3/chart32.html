@@ -29,8 +29,6 @@
     <script language="JavaScript">
       $(document).ready(function () {
         var chart = {
-          type: "column",
-
           borderRadius: {
             radius: 0,
           },
@@ -39,7 +37,7 @@
           text: "",
         };
         var subtitle = {
-          text: "EG Overtime Hours",
+          text: "EG Weekly Complaints",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -47,9 +45,6 @@
         };
         var xAxis = {
           categories: [
-            "3",
-            "4",
-            "5",
             "6",
             "7",
             "8",
@@ -71,15 +66,18 @@
             "24",
             "25",
           ],
+          tickInterval: 1,
+
           title: {
             text: null,
           },
         };
         var yAxis = {
           min: 0,
-          tickInterval: 2000,
+          tickInterval: 2,
+          max: 14,
           title: {
-            text: "OT Hours",
+            text: "Complaints",
             style: {
               fontWeight: "500",
               fontSize: "18",
@@ -109,52 +107,43 @@
         };
         var series = [
           {
-            name: "Shipping OT Hours",
-            color: "#00b050",
-            marker: {
-              enabled: false,
-            },
-            data: [
-              12200, 11800, 6000, 6400, 7000, 5500, 6000, 6400, 6000, 12400,
-              3000, 3000, 5800, 6300, 6700, 6300, 6400, 6100, 5900, 6000, 0,
-              8400, 13100,
-            ],
-          },
-          {
-            name: "All Other OT Hours",
+            name: "Minor",
+            type: "column",
             color: "#ffb41f",
             marker: {
               enabled: false,
             },
             data: [
-              11700, 11400, 5600, 6000, 6500, 5000, 5700, 6000, 5800, 11300,
-              2500, 2700, 5200, 6000, 6300, 6000, 6000, 5800, 5600, 5900, 0,
-              8100, 12400,
+              8, 2, 2, 6, 6, 12, 2, 3, 5, 0, 6, 12, 7, 8, 5, 8, 4, 10, 5, 4,
             ],
           },
           {
-            name: "Cold Side OT Hours",
-            color: "#4472c4",
+            name: "Major",
+            type: "column",
+            color: "#E36E31",
             marker: {
               enabled: false,
             },
-            data: [
-              9800, 9000, 4800, 4900, 5300, 4200, 4400, 4500, 4200, 9800, 2100,
-              2000, 4100, 4100, 5700, 5400, 5300, 5200, 3000, 5000, 100, 6400,
-              10400,
-            ],
+            data: [3, 0, 1, 4, 3, 7, 1, 1, 2, 5, 4, 3, 5, 4, 0, 4, 1, 3, 2, 2],
           },
           {
-            name: "Hot Side OT hours",
-            color: "#ff0000",
+            name: "Critical",
+            type: "column",
+            color: "#FF0000",
             marker: {
               enabled: false,
             },
-            data: [
-              3400, 3800, 1900, 1800, 1900, 2000, 2000, 2000, 1700, 3700, 300,
-              1900, 2200, 2300, 2000, 2300, 1700, 1900, 1600, 1900, 0, 2300,
-              4100,
-            ],
+            data: [1, 1, 0, 1, 2, 5, 0, 0, 1, 1, 2, 1, 2, 3, 0, 1, 0, 2, 0, 1],
+          },
+          {
+            name: "Target Complaints",
+            type: "line",
+            color: "#000",
+            marker: {
+              enabled: false,
+            },
+            data: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+            lineWidth: 3.5,
           },
         ];
 

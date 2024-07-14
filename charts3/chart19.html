@@ -24,22 +24,18 @@
   <body>
     <div
       id="container"
-      style="width: 550px; height: 450px; margin: 0 auto"
+      style="width: 550px; height: 400px; margin: 0 auto"
     ></div>
     <script language="JavaScript">
       $(document).ready(function () {
         var chart = {
           type: "column",
-
-          borderRadius: {
-            radius: 0,
-          },
         };
         var title = {
           text: "",
         };
         var subtitle = {
-          text: "EG Overtime Hours",
+          text: "FRE Team Counts",
           style: {
             fontWeight: "bold",
             fontSize: "20",
@@ -76,10 +72,11 @@
           },
         };
         var yAxis = {
-          min: 0,
-          tickInterval: 2000,
+          min: 700,
+          max: 1200,
+          tickInterval: 50,
           title: {
-            text: "OT Hours",
+            text: "Count",
             style: {
               fontWeight: "500",
               fontSize: "18",
@@ -99,6 +96,7 @@
             },
             borderWidth: 0,
           },
+
           column: {
             grouping: false,
           },
@@ -109,51 +107,37 @@
         };
         var series = [
           {
-            name: "Shipping OT Hours",
-            color: "#00b050",
+            name: "Active Count",
+            color: "#40C47C",
             marker: {
               enabled: false,
             },
             data: [
-              12200, 11800, 6000, 6400, 7000, 5500, 6000, 6400, 6000, 12400,
-              3000, 3000, 5800, 6300, 6700, 6300, 6400, 6100, 5900, 6000, 0,
-              8400, 13100,
+              1099, 1096, 1090, 1050, 1044, 1041, 1033, 1028, 1022, 1018, 1014,
+              1012, 1012, 1015, 1012, 1011, 1020, 1022, 1021, 1017, 1012, 1015,
+              1014,
             ],
           },
           {
-            name: "All Other OT Hours",
-            color: "#ffb41f",
+            name: "Leave Count",
+            color: "#ED976A",
             marker: {
               enabled: false,
             },
             data: [
-              11700, 11400, 5600, 6000, 6500, 5000, 5700, 6000, 5800, 11300,
-              2500, 2700, 5200, 6000, 6300, 6000, 6000, 5800, 5600, 5900, 0,
-              8100, 12400,
+              1077, 1073, 1063, 1021, 1014, 1011, 1001, 995, 989, 983, 978, 976,
+              976, 978, 973, 971, 979, 983, 979, 979, 974, 973, 978,
             ],
           },
           {
-            name: "Cold Side OT Hours",
-            color: "#4472c4",
+            name: "Restricted Count",
+            color: "#4094D0",
             marker: {
               enabled: false,
             },
             data: [
-              9800, 9000, 4800, 4900, 5300, 4200, 4400, 4500, 4200, 9800, 2100,
-              2000, 4100, 4100, 5700, 5400, 5300, 5200, 3000, 5000, 100, 6400,
-              10400,
-            ],
-          },
-          {
-            name: "Hot Side OT hours",
-            color: "#ff0000",
-            marker: {
-              enabled: false,
-            },
-            data: [
-              3400, 3800, 1900, 1800, 1900, 2000, 2000, 2000, 1700, 3700, 300,
-              1900, 2200, 2300, 2000, 2300, 1700, 1900, 1600, 1900, 0, 2300,
-              4100,
+              1062, 1058, 1048, 1006, 999, 996, 986, 980, 974, 968, 963, 961,
+              960, 962, 957, 955, 963, 969, 969, 969, 965, 964, 970,
             ],
           },
         ];

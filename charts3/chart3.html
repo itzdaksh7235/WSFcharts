@@ -24,7 +24,7 @@
   <body>
     <div
       id="container"
-      style="width: 550px; height: 400px; margin: 0 auto"
+      style="width: 550px; height: 450px; margin: 0 auto"
     ></div>
     <script language="JavaScript">
       $(document).ready(function () {
@@ -99,6 +99,7 @@
             borderRadius: {
               radius: 0,
             },
+            borderWidth: 0,
           },
         };
         var tooltip = {
@@ -109,6 +110,10 @@
           {
             name: "Kill Hogs/Hour",
             type: "column",
+
+            borderRadius: {
+              radius: 0,
+            },
             color: "#9CC7E6",
             yAxis: 1,
             marker: {

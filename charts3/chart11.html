@@ -24,12 +24,16 @@
   <body>
     <div
       id="container"
-      style="width: 550px; height: 400px; margin: 0 auto"
+      style="width: 550px; height: 450px; margin: 0 auto"
     ></div>
     <script language="JavaScript">
       $(document).ready(function () {
         var chart = {
           type: "column",
+
+          borderRadius: {
+            radius: 0,
+          },
         };
         var title = {
           text: "",
@@ -89,10 +93,11 @@
           valueSuffix: "",
         };
         var plotOptions = {
-          series:{
+          series: {
             borderRadius: {
-            radius: 0,
-          },
+              radius: 0,
+            },
+            borderWidth: 0,
           },
           column: {
             grouping: false,
