@@ -40,3 +40,10 @@ body {
   padding: 40px 60px;
   margin: 20px 30px;
 }
+
+.title {
+  font-size: 28px;
+  padding: 1px 4px;
+  font-weight: 600;
+  text-decoration: underline;
+}
